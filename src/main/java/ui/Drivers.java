@@ -28,4 +28,17 @@ public class Drivers {
         WebDriver driver = new FirefoxDriver(capabilities);
         return driver;
     }
+
+    public void get(String s) {
+        setFireFoxDriver().get(s);
+    }
+    public void close(){
+        setFireFoxDriver().close();
+    }
+    public void quit(){
+        setFireFoxDriver().quit();
+    }
+    public void navOtherUrls(String url){
+        setFireFoxDriver().navigate().to(url);
+    }
 }
