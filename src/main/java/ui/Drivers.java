@@ -6,6 +6,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Drivers {
+    private String browserName;
+    Drivers(String browserName){
+        if (browserName == "chrome"){
+            setChromeDriver();
+        }else{
+            setFireFoxDriver();
+        }
+    }
     public static WebDriver setChromeDriver(){
         String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\drivers\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver",path);

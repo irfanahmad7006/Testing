@@ -9,7 +9,7 @@ public class SeleUtilities {
         this.driver = driver;
     }
 
-    public void sendkeys(String xpath,String value){
+    public void sendKeys(String xpath,String value){
         driver.findElement(By.xpath(xpath)).sendKeys(value);
     }
     public void click(String xpath){
