@@ -52,7 +52,11 @@
             <artifactId>cucumber-junit</artifactId>
             <version>6.6.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>5.7.0</version>
+        </dependency>
 
 
 
