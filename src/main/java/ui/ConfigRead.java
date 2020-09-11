@@ -37,13 +37,28 @@ public class ConfigRead {
         }
     }
 
-    public String getBrowser(){
+    public String getBrowser() {
         String browser = properties.getProperty("browser");
-        if (browser != null){
+        if (browser != null) {
             return browser;
-        }else {
+        } else {
             throw new RuntimeException("No Browser Found");
         }
     }
 
+    public String getUserName(String userName) {
+        try {
+            return properties.getProperty(userName);
+        } catch (Exception e) {
+            throw new RuntimeException("No User Name Found");
+        }
+    }
+
+    public String getPassword(String password) {
+        try {
+            return properties.getProperty(password);
+        } catch (Exception e) {
+            throw new RuntimeException("No Password Found");
+        }
+    }
 }
