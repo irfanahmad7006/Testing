@@ -1,6 +1,6 @@
 Feature: Login to a website
 
-  Scenario: Login to gmail
+  Scenario: Login to an application
     Given User sets the driver for "chrome" browser
     Given User navigates to "https://www.gmail.com"
     Given User navigates to "https://www.youtube.com"

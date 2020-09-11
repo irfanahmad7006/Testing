@@ -7,31 +7,38 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Drivers {
 
-//    WebDriver Drivers(String browserName){
+    //    WebDriver Drivers(String browserName){
 //        if (browserName == "chrome"){
 //            return setChromeDriver();
 //        }else{
 //            return setFireFoxDriver();
 //        }
 //    }
-    public static WebDriver setBrowser(String browserName){
-        if (browserName == "chrome"){
+    public static WebDriver setBrowser(String browserName) {
+        if (browserName.equals("chrome")) {
             return setChromeDriver();
-        }else{
+        } else {
             return setFireFoxDriver();
         }
     }
-    public static WebDriver setChromeDriver(){
-        String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\drivers\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver",path);
+
+    static String userDirectory = System.getProperty("user.dir");
+
+    public static WebDriver setChromeDriver() {
+        System.out.println(userDirectory);
+//        String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\src\\main\\resources\\drivers\\chromedriver.exe";
+        String path = userDirectory+"/src/main/resources/drivers/chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", path);
         WebDriver driver = new ChromeDriver();
         return driver;
     }
-    public static WebDriver setFireFoxDriver(){
-        String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\drivers\\geckodriver.exe";
-        System.setProperty("webdriver.gecko.driver",path);
+
+    public static WebDriver setFireFoxDriver() {
+//        String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\src\\main\\resources\\drivers\\geckodriver.exe";
+        String path = userDirectory+"/src/main/resources/drivers/geckodriver.exe";
+        System.setProperty("webdriver.gecko.driver", path);
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette",true);
+        capabilities.setCapability("marionette", true);
         WebDriver driver = new FirefoxDriver(capabilities);
         return driver;
     }
