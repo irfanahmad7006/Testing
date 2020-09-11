@@ -41,6 +41,4 @@ public class Drivers {
         WebDriver driver = new FirefoxDriver(capabilities);
         return driver;
     }
-
-
 }

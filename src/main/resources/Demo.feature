@@ -1,4 +1,4 @@
-Feature: Login to a website
+Feature: Login to a website simple ATDD approach
 
   Scenario: Login to an application
     Given User sets the driver for "chrome" browser
