@@ -25,7 +25,6 @@ public class Drivers {
     static String userDirectory = System.getProperty("user.dir");
 
     public static WebDriver setChromeDriver() {
-        System.out.println(userDirectory);
 //        String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\src\\main\\resources\\drivers\\chromedriver.exe";
         String path = userDirectory+"/src/main/resources/drivers/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", path);
