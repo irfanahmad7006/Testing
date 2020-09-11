@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Drivers {
-    private String browserName;
+
 //    WebDriver Drivers(String browserName){
 //        if (browserName == "chrome"){
 //            return setChromeDriver();
@@ -14,6 +14,13 @@ public class Drivers {
 //            return setFireFoxDriver();
 //        }
 //    }
+    public static WebDriver setBrowser(String browserName){
+        if (browserName == "chrome"){
+            return setChromeDriver();
+        }else{
+            return setFireFoxDriver();
+        }
+    }
     public static WebDriver setChromeDriver(){
         String path = "C:\\Users\\Irfan_PC\\Documents\\GitHub\\Testing\\drivers\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver",path);
@@ -29,16 +36,5 @@ public class Drivers {
         return driver;
     }
 
-    public void get(String s) {
-        setFireFoxDriver().get(s);
-    }
-    public void close(){
-        setFireFoxDriver().close();
-    }
-    public void quit(){
-        setFireFoxDriver().quit();
-    }
-    public void navOtherUrls(String url){
-        setFireFoxDriver().navigate().to(url);
-    }
+
 }
