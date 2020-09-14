@@ -54,4 +54,10 @@ public class Login extends SeleUtilities {
         sendKeys(driver, userNameXpath, userID);
         sendKeys(driver, passwordXpath, password);
     }
+
+    @Given("User wait for {int} miliseconds")
+    public void user_wait_for_miliseconds(Integer int1) {
+        userWaits(int1);
+
+    }
 }
