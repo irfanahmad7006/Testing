@@ -54,5 +54,5 @@ public class SeleUtilities {
         WebDriverWait wait = new WebDriverWait(driver,20);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
-
+    public void userWaits
 }
