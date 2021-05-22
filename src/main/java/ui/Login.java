@@ -1,8 +1,11 @@
 package ui;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
+
+import java.io.IOException;
 
 public class Login extends SeleUtilities {
     private WebDriver driver;
@@ -59,5 +62,10 @@ public class Login extends SeleUtilities {
     public void user_wait_for_miliseconds(Integer int1) {
         userWaits(int1);
 
+    }
+
+    @And("User takes the screen shot of the page")
+    public void userTakesTheScreenShotOfThePage() throws IOException {
+        takeScrnShot(driver);
     }
 }

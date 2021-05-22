@@ -1,11 +1,16 @@
 package ui;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class SeleUtilities {
@@ -61,4 +66,23 @@ public class SeleUtilities {
             e.printStackTrace();
         }
     }
+
+    public static void takeScrnShot (WebDriver driver) throws IOException {
+        TakesScreenshot takesScreenshot = ((TakesScreenshot)driver); // Creating instance
+
+        File file = takesScreenshot.getScreenshotAs(OutputType.FILE); // Taking screen shot
+
+        String location = "C:\\Users\\irfan\\IdeaProjects\\Testing\\src\\main\\resources\\screenshots\\";
+        String fileType = ".png";
+        /*Using to date&time to make file name unique*/
+        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy h-m-s");
+        Date date = new Date();
+
+        String fullFileNameWithLoc = location+dateFormat.format(date)+fileType;
+
+        File screenShot = new File(fullFileNameWithLoc);
+        FileUtils.copyFile(file,screenShot);
+    }
+
+
 }
